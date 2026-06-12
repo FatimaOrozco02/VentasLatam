@@ -1,0 +1,130 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   --color_white: #fff;
+   --color_light_white: #eff6f8;
+   --color_dark: #000;
+   --color_dark_blue: #385e6f;
+   --color_darker_blue: #2c4a5b;
+   --color_light_blue: #67acc6;
+   --color_secondary_subtle: #d8d8d9;
+   --color_bi_color_blue: #BFDAE4;
+   --color_light_gray: #c2bebe;
+   --color_light_gray_subtle: #f0f0f0;
+   --color_lighter_blue: #eff6f8;
+}
+
+@font-face {
+   font-family: "Montserrat-Regular";
+   src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+   font-family: "Montserrat-Bold";
+   src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: "Montserrat-SemiBold";
+   src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+button,
+label,
+select,
+option,
+button {
+   font-family: "Montserrat-Regular";
+}
+
+h1 {
+   font-family: "Montserrat-SemiBold";
+}
+
+.btn {
+   border-radius: 0;
+}
+
+/*Buttons*/
+.btn-primary {
+   --bs-btn-color: #fff;
+   --bs-btn-bg: #385E70;
+   --bs-btn-border-color: #385E70;
+   --bs-btn-hover-color: #fff;
+   --bs-btn-hover-bg: #304e5c;
+   --bs-btn-hover-border-color: #304e5c;
+   --bs-btn-focus-shadow-rgb: 130, 138, 145;
+   --bs-btn-active-color: #fff;
+   --bs-btn-active-bg: #304e5c;
+   --bs-btn-active-border-color: #304e5c;
+   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+   --bs-btn-disabled-color: #fff;
+   --bs-btn-disabled-bg: #304e5c;
+   --bs-btn-disabled-border-color: #385E70;
+   --bs-btn-disabled-opacity: 0.7;
+}
+
+
+/* Sección de responsividad */
+@media (max-width: 768px) {
+   .btn-aside-menu {
+      display: block;
+   }
+
+   aside {
+      z-index: 1;
+      width: 100% !important;
+      padding: 0 !important;
+      display: none !important;
+      position: fixed;
+      z-index: 1;
+   }
+
+   .mnh-100 {
+      min-height: auto;
+   }
+
+   .mnw-103 {
+      min-width: 103%;
+   }
+
+   .row-max-width-responsive {
+      max-width: 103%;
+   }
+
+   .w-img-logo {
+      width: 54px;
+   }
+
+   .loader {
+      top: 43%;
+      left: 43%;
+   }
+}
+
+@media (max-width: 425px) {
+   .loader {
+      top: 43%;
+      left: 37%;
+   }
+}
+
+@media (max-width: 375px) {
+   .loader {
+      top: 43%;
+      left: 32%;
+   }
+}
