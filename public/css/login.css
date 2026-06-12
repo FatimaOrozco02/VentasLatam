@@ -12,3 +12,43 @@
    border-top-left-radius: 2rem;
    border-bottom-left-radius: 2rem;
 }
+
+.input-group-eye {
+   background: #3889e6;
+   border: solid 1px #3A3A3A;
+   border-radius: 0;
+}
+
+.input-group-text-icon {
+   background: #fff;
+   border-top: solid 1px #3A3A3A;
+   border-left: solid 1px #3A3A3A;
+   border-bottom: solid 1px #3A3A3A;
+   color: #B3B5B6;
+}
+
+.border-left-none {
+   border-left: none;
+}
+
+.title-login {
+   font-family: "Montserrat-Bold";
+   color: #3A3A3A;
+}
+
+.sub-title-login {
+   font-family: "Montserrat-SemiBold";
+   color: #3A3A3A;
+}
+
+.title-form {
+   color: #B3B5B6;
+}
+
+.input-name::placeholder {
+   color: #B3B5B6;
+}
+
+.input-password::placeholder {
+   color: #B3B5B6;
+}

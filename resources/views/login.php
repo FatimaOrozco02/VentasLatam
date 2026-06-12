@@ -6,11 +6,18 @@
             <div class="row">
                <div class="col-12 col-sm-12 col-md-7">
                   <div class="bg_login">
-                     <div class="p-md-5"></div>
-                     <div class="p-5">
-                        <h1 class="title-login mt-5">Grupo Difusión Científica</h1>
-                        <h5 class="sub-title-login">Panel de control de ventas</h5>
+
+                     <div class="row">
+                        <div class="col-12 col-sm-2 col-md-2"></div>
+                        <div class="col-12 col-sm-8 col-md-8">
+                           <div class="mt-5"></div>
+                           <div class="p-md-4">
+                              <h1 class="title-login mt-5">Grupo Difusión Científica</h1>
+                              <h5 class="sub-title-login">Panel de control de ventas</h5>
+                           </div>
+                        </div>
                      </div>
+
                   </div>
                </div>
                <div class="col-12 col-sm-12 col-md-5">
@@ -23,13 +30,13 @@
                         <!-- usuario  -->
                         <div class="input-group mb-3">
                            <span class="input-group-text input-group-text-icon"><i class="fa-solid fa-user"></i></span>
-                           <input type="text" class="form-control border-left-none" id="loginName" name="name" placeholder="Nombre de usuarios">
+                           <input type="text" class="form-control border-left-none input-name" id="loginName" name="name" placeholder="Nombre de usuarios">
                         </div>
                         <!-- contraseña  -->
                         <div class="input-group mb-3">
                            <span class="input-group-text input-group-text-icon"><i class="fa-solid fa-lock-open"></i></span>
-                           <input type="password" class="form-control border-left-none" placeholder="Contraseña" id="loginPassword" name="password">
-                           <span class="input-group-text input-group-eye"><i class="fa-regular fa-eye text-white"></i></span>
+                           <input type="password" class="form-control border-left-none input-password" placeholder="Contraseña" id="loginPassword" name="password">
+                           <span class="input-group-text input-group-eye pointer" id="showPassword"><i class="fa-regular fa-eye text-white" id="iconEye"></i></span>
                         </div>
 
                         <div class="row">
@@ -42,7 +49,7 @@
                               </div>
                            </div>
                            <div class="col-12 col-sm-12 col-md-12 mb-2">
-                              <p><a class="pointer">¿Olvidaste tu contraseña?</a></p>
+                              <p><a id="forgotPassword" class="pointer">¿Olvidaste tu contraseña?</a></p>
                            </div>
                         </div>
 
