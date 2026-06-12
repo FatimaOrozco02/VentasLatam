@@ -1,17 +1,14 @@
-.logo-gdc {
-    background: var(--color_white);
-    width: 255px;
-    height: 255px;
-    border: 10px solid var(--color_dark_blue);
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.section-login {
+   background: #F7FBFE;
+   background: linear-gradient(90deg, rgba(247, 251, 254, 1) 9%, rgba(109, 177, 239, 1) 100%);
 }
 
-.logo-gdc img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+.bg_login {
+   background: url(../img/bg-login.png);
+   background-size: cover;
+   min-height: 100%;
+   width: 100%;
+   background-position: top;
+   border-top-left-radius: 2rem;
+   border-bottom-left-radius: 2rem;
 }
