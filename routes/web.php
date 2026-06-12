@@ -8,3 +8,5 @@ use Core\Router;
 // Rutas sin autenticación
 $router->get("/", "HomeController@index");
 $router->get("/logout", "AuthController@logout");
+
+$router->get("/dashboard", "DashboardController@home");
