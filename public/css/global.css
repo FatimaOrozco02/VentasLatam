@@ -4,17 +4,17 @@
 }
 
 :root {
-   --color_white: #fff;
-   --color_light_white: #eff6f8;
-   --color_dark: #000;
-   --color_dark_blue: #385e6f;
-   --color_darker_blue: #2c4a5b;
-   --color_light_blue: #67acc6;
-   --color_secondary_subtle: #d8d8d9;
-   --color_bi_color_blue: #BFDAE4;
-   --color_light_gray: #c2bebe;
-   --color_light_gray_subtle: #f0f0f0;
-   --color_lighter_blue: #eff6f8;
+   --color_light_blue:#3e91ff;
+   --color_light_white: #f7fafa;
+   --color_brown: #3a3a3a;
+   --color_dark: #0d141c;
+   --color_dark_blue: #3167a5;
+   --color_green: #2e873b;
+   --color_red: #b44541;
+   --color_aqua: #23848c;
+   --color_golden: #b7ac42;
+   --color_purple: #253187;
+   --color_light_gray:;
 }
 
 @font-face {
@@ -59,24 +59,51 @@ h1 {
 }
 
 /*Buttons*/
-.btn-primary {
-   --bs-btn-color: #fff;
-   --bs-btn-bg: #385E70;
-   --bs-btn-border-color: #385E70;
-   --bs-btn-hover-color: #fff;
-   --bs-btn-hover-bg: #304e5c;
-   --bs-btn-hover-border-color: #304e5c;
-   --bs-btn-focus-shadow-rgb: 130, 138, 145;
-   --bs-btn-active-color: #fff;
-   --bs-btn-active-bg: #304e5c;
-   --bs-btn-active-border-color: #304e5c;
-   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-   --bs-btn-disabled-color: #fff;
-   --bs-btn-disabled-bg: #304e5c;
-   --bs-btn-disabled-border-color: #385E70;
-   --bs-btn-disabled-opacity: 0.7;
+.btn-primary, .btn-secondary {
+   background-color: var(--color_light_blue);
+   border:none;
 }
 
+.card-header-1{
+   background-color: var(--color_dark_blue);
+}
+.card-header-2{
+   background-color: var(--color_green);
+}
+.card-header-3{
+   background-color: var( --color_red);
+}
+.card-header-4{
+   background-color: var(--color_aqua);
+}
+.card-header-5{
+   background-color: var(--color_golden);
+}
+.card-header-6{
+   background-color: var(--color_purple);
+}
+
+.bg-body-inner {
+   background-color: #f8fafc;     
+   border-top-left-radius: 16px;  
+   border-top-right-radius: 16px; 
+   margin-top: -10px;             
+   position: relative;            
+}
+
+
+.diamond-amount::before {
+   content: "♦";
+   color: #1a202c;
+   font-size: 0.8rem;
+   margin-right: 5px;
+   vertical-align: middle;
+   display: inline-block;
+}
+
+.inferior{
+   border-bottom: 2px solid #3e91ff;
+}
 
 /* Sección de responsividad */
 @media (max-width: 768px) {
