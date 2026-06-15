@@ -54,6 +54,11 @@ h1 {
    font-family: "Montserrat-SemiBold";
 }
 
+.subtitle{
+   color:var(--color_light_blue);
+}
+
+
 .btn {
    border-radius: 1vh;
 }
