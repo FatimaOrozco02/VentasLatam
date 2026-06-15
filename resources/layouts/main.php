@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="<?= publicUrl('lib/fontawesome/css/all.css') ?>">
    <link rel="stylesheet" href="<?= publicUrl('css/global.css') ?>">
    <link rel="stylesheet" href="<?= publicUrl('lib/DataTables/css/datatables.css') ?>">
-   
+
 
    <!-- Library CSS -->
    <?php foreach ($libStyles ?? [] as $libStyle): ?>
@@ -40,7 +40,8 @@
             <?php endif; ?>
 
             <!-- Vista -->
-            <div class="w-85 p-0 ml-15p">
+            <!-- <div class="w-85 p-0 ml-15p"> -->
+            <div class="w-100">
                <?= $content ?>
             </div>
          </div>
