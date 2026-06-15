@@ -16,8 +16,8 @@
                 <!-- Clientes -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-1 text-white">
-                            Clientes
+                        <div class="card-header-1 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Clientes</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
@@ -36,8 +36,8 @@
                 <!-- Nuevos -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-2 text-white">
-                            Nuevos
+                        <div class="card-header-2 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Nuevos</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
@@ -56,13 +56,13 @@
                 <!-- Perdidos -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-3 text-white">
-                            Perdidos
+                        <div class="card-header-3 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Perdidos</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">75</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-danger-subtle text-danger">
                                     1250%
                                 </span>
                             </div>
@@ -72,17 +72,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Recuperados -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-4 text-white">
-                            Recuperados
+                        <div class="card-header-4 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Recuperados</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">2</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-success-subtle text-success">
                                     33.3%
                                 </span>
                             </div>
@@ -96,13 +96,13 @@
                 <!-- Renovados -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-5 text-white">
-                            ReNOVADOS
+                        <div class="card-header-5 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Renovados</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">3</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-success-subtle text-success">
                                     50%
                                 </span>
                             </div>
@@ -116,13 +116,13 @@
                 <!-- Crecimiento -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-6 text-white">
-                            Crecimiento
+                        <div class="card-header-6 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Crecimiento</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">11</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-success-subtle text-success">>
                                     14.1%
                                 </span>
                             </div>
@@ -139,8 +139,8 @@
             <h3>Ventas anuales 2026</h3>
 
         </div>
-        <div class="mb-5">
-            <button class="btn btnp-primary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Gráfica de barras</button>
+        <div class="mb-5 d-flex justify-content-between align-items-center">
+            <button class="btn btn-primary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Gráfica de barras</button>
             <button class="btn btn-secondary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Ir a ventas</button>
         </div>
 
@@ -163,8 +163,8 @@
                 <!-- Clientes -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-1 text-white">
-                            Clientes
+                        <div class="card-header-1 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Clientes</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
@@ -183,8 +183,8 @@
                 <!-- Nuevos -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-2 text-white">
-                            Nuevos
+                        <div class="card-header-2 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Nuevos</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
@@ -203,13 +203,13 @@
                 <!-- Perdidos -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-3 text-white">
-                            Perdidos
+                        <div class="card-header-3 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Perdidos</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">75</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-danger-subtle text-danger">
                                     1250%
                                 </span>
                             </div>
@@ -219,17 +219,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Recuperados -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-4 text-white">
-                            Recuperados
+                        <div class="card-header-4 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Recuperados</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">2</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-success-subtle text-success">
                                     33.3%
                                 </span>
                             </div>
@@ -243,13 +243,13 @@
                 <!-- Renovados -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-5 text-white">
-                            ReNOVADOS
+                        <div class="card-header-5 text-white border-0 py-2 px-3 rounded-top-">
+                            <h5 class="mb-2 fs-6 fw-normal">Renovados</h5>
                         </div>
                         <div class="card-body bg-body-inner p-3">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">3</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-success-subtle text-success">
                                     50%
                                 </span>
                             </div>
@@ -263,13 +263,13 @@
                 <!-- Crecimiento -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
                     <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
-                        <div class="card-header-6 text-white">
-                            Crecimiento
+                        <div class="card-header-6 text-white border-0 py-2 px-3 rounded-top-4">
+                            <h5 class="mb-2 fs-6 fw-normal">Crecimiento H</h5>
                         </div>
-                        <div class="card-body bg-body-inner p-3">
+                        <div class="card-body bg-body-inner p-3 rounded-bottom-4">
                             <div class="d-flex justify-content-between align-items-center border-bottom border-1 pb-2">
                                 <span class="stat-number">11</span>
-                                <span class="badge bg-success-subtle text-danger">
+                                <span class="badge bg-success-subtle text-success">
                                     14.1%
                                 </span>
                             </div>
@@ -286,8 +286,8 @@
             <h3>Ventas anuales 2026</h3>
 
         </div>
-        <div class="mb-5">
-            <button class="btn btnp-primary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Gráfica de barras</button>
+        <div class="mb-5 d-flex justify-content-between align-items-center">
+            <button class="btn btn-primary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Gráfica de barras</button>
             <button class="btn btn-secondary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Ir a ventas</button>
         </div>
 

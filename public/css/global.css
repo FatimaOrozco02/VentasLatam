@@ -14,7 +14,7 @@
    --color_aqua: #23848c;
    --color_golden: #b7ac42;
    --color_purple: #253187;
-   --color_light_gray: ;
+   --color_light_gray: #f1f5f9;
 }
 
 @font-face {
@@ -127,6 +127,8 @@ h1 {
 .inferior {
    border-bottom: 2px solid #3e91ff;
 }
+
+
 
 /* Sección de responsividad */
 @media (max-width: 768px) {
