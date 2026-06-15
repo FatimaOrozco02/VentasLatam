@@ -19,3 +19,6 @@ $router->group(["prefix" => "/presupuesto"], function (Router $router) {
             $router->get("/venta", "BudgetController@sale");
         });
 
+
+$router->get("/editar", "EditController@edit");
+$router->get("/editar/form", "EditController@form");

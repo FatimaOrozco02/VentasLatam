@@ -11,6 +11,8 @@
    <link rel="stylesheet" href="<?= publicUrl('css/global.css') ?>">
    <link rel="stylesheet" href="<?= publicUrl('lib/DataTables/css/datatables.css') ?>">
 
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=grid_view" />
+
 
    <!-- Library CSS -->
    <?php foreach ($libStyles ?? [] as $libStyle): ?>
@@ -29,11 +31,19 @@
    </div>
 
    <!-- Header -->
-   <!-- <?php require_once __DIR__ . '/header.php'; ?> -->
+   <?php require_once __DIR__ . '/header.php'; ?>
 
    <?php if ($sessionUserProfileId && $sessionLayoutAside): ?>
       <section>
+
+         <div>
+            <button class="btn btn-light mb-3" onclick="toggleAside(event)">
+               <i class="fa-solid fa-bars"></i>
+            </button>
+         </div>
+
          <div class="d-flex mxw-100 row-max-width-responsive">
+
             <!-- Sidebar -->
             <?php if ($sessionLayoutAside): ?>
                <?php require_once __DIR__ . "/sidebar.php"; ?>
@@ -41,7 +51,7 @@
 
             <!-- Vista -->
             <!-- <div class="w-85 p-0 ml-15p"> -->
-            <div class="w-100">
+            <div id="content-view" class="layout">
                <?= $content ?>
             </div>
          </div>

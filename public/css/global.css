@@ -4,7 +4,7 @@
 }
 
 :root {
-   --color_light_blue: #3e91ff;
+   --color_light_blue: #3E97FF;
    --color_light_white: #f7fafa;
    --color_brown: #3a3a3a;
    --color_dark: #0d141c;
@@ -33,6 +33,10 @@
    src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
 }
 
+.bg-main {
+   background-color: var(--color_light_blue);
+}
+
 
 h2,
 h3,
@@ -57,8 +61,8 @@ h1 {
 
 
 
-.subtitle{
-   color:var(--color_light_blue);
+.subtitle {
+   color: var(--color_light_blue);
 }
 
 
@@ -67,6 +71,11 @@ h1 {
 }
 
 .form-control {
+   border: solid 1px #3A3A3A;
+   border-radius: 0;
+}
+
+.form-select {
    border: solid 1px #3A3A3A;
    border-radius: 0;
 }
@@ -142,9 +151,33 @@ h1 {
       padding: 0 !important;
       display: none !important;
       position: fixed;
-      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 320px;
+      height: 100vh;
+      transform: translateX(-100%);
+      z-index: 9999;
    }
 
+   #content-view {
+      width: 100%;
+      margin-left: 0;
+   }
+
+   #sidebar.show {
+      transform: translateX(0);
+   }
+
+   #sidebar.closed {
+      width: 320px;
+      min-width: 320px;
+      padding: 1rem;
+   }
+
+}
+
+/* Sección de responsividad */
+@media (max-width: 768px) {
    .mnh-100 {
       min-height: auto;
    }

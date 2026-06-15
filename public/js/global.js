@@ -138,3 +138,19 @@
 // $(document).ajaxError(function (event, jqXHR, settings, thrownError) {
 //    $(".loader-bg").addClass("d-none");
 // });
+
+function toggleAside(event) {
+
+   event.preventDefault();
+
+   if (window.innerWidth <= 992) {
+
+      $('#sidebar').toggleClass('show');
+
+   } else {
+
+      $('#sidebar').toggleClass('closed');
+
+   }
+
+}

@@ -1,17 +1,17 @@
 <div class="pe-5 ps-5">
-    <div class="inferior">
-        <div>
-            <div class="mt-4">
-                <h1 class="title h3 fw-bold  mb-0">GDC <span class=" subtitle fs-5 fw-normal ms-2">consulta de ventas anuales 2026</span></h1>
-                <div class="border-bottom border-3 w-25"></div>
-            </div>
-            <div>
-                <span>SalesCp <i class="fa-solid fa-circle-question" style="color: #050505;"></i></span>
-            </div>
-        </div>
+   <div class="inferior">
+      <div>
+         <div class="mt-4">
+            <h1 class=" title h3 fw-bold mb-0">GDC <span class=" subtitle fs-5 fw-normal ms-2">consulta de ventas anuales 2026</span></h1>
+            <div class="border-bottom border-3 w-25"></div>
+         </div>
+         <div>
+            <span>SalesCp <i class="fa-solid fa-circle-question" style="color: #050505;"></i></span>
+         </div>
+      </div>
 
-        <div class="container-fluid py-3">
-            <div class="row g-3">
+      <div class="container-fluid py-3">
+         <div class="row g-3">
 
                 <!-- Clientes -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
@@ -135,8 +135,8 @@
             </div>
         </div>
 
-        <div>
-            <h3>Ventas anuales 2026</h3>
+      <div>
+         <h3>Ventas anuales 2026</h3>
 
         </div>
         <div class="mb-5 d-flex justify-content-between align-items-center">
@@ -144,21 +144,21 @@
             <button class="btn btn-secondary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Ir a ventas</button>
         </div>
 
-    </div>
+   </div>
 
-    <div class="inferior">
-        <div>
-            <div class="mt-4">
-                <h1 class=" title h3 fw-bold mb-0">Oficina Ecuador <span class=" subtitle fs-5 fw-normal ms-2">consulta de ventas anuales 2026</span></h1>
-                <div class="border-bottom border-3 w-50"></div>
-            </div>
-            <div>
-                <span>SalesCp <i class="fa-solid fa-circle-question" style="color: #050505;"></i></span>
-            </div>
-        </div>
+   <div class="inferior">
+      <div>
+         <div class="mt-4">
+            <h1 class=" title h3 fw-bold mb-0">Oficina Ecuador <span class=" subtitle fs-5 fw-normal ms-2">consulta de ventas anuales 2026</span></h1>
+            <div class="border-bottom border-3 w-50"></div>
+         </div>
+         <div>
+            <span>SalesCp <i class="fa-solid fa-circle-question" style="color: #050505;"></i></span>
+         </div>
+      </div>
 
-        <div class="container-fluid py-3">
-            <div class="row g-3">
+      <div class="container-fluid py-3">
+         <div class="row g-3">
 
                 <!-- Clientes -->
                 <div class="col-12 col-sm-6 col-md-4 col-xl">
@@ -282,8 +282,8 @@
             </div>
         </div>
 
-        <div>
-            <h3>Ventas anuales 2026</h3>
+      <div>
+         <h3>Ventas anuales 2026</h3>
 
         </div>
         <div class="mb-5 d-flex justify-content-between align-items-center">
@@ -291,5 +291,5 @@
             <button class="btn btn-secondary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4">Ir a ventas</button>
         </div>
 
-    </div>
+   </div>
 </div>
