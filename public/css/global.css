@@ -46,6 +46,7 @@ button,
 label,
 select,
 option,
+span,
 button {
    font-family: "Montserrat-Regular";
 }
@@ -53,6 +54,8 @@ button {
 h1 {
    font-family: "Montserrat-SemiBold";
 }
+
+
 
 .subtitle{
    color:var(--color_light_blue);
