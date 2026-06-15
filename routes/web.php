@@ -10,3 +10,5 @@ $router->get("/", "HomeController@index");
 $router->get("/logout", "AuthController@logout");
 
 $router->get("/dashboard", "DashboardController@home");
+$router->get("/editar", "EditController@edit");
+$router->get("/editar/form", "EditController@form");
