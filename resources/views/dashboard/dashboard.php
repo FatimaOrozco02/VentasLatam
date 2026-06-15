@@ -2,7 +2,7 @@
    <div class="inferior">
       <div>
          <div class="mt-4">
-            <h1 class="title h3 mb-0">GDC <span class=" subtitle fs-5 fw-normal ms-2">consulta de ventas anuales 2026</span></h1>
+            <h1 class=" title h3 fw-bold mb-0">GDC <span class=" subtitle fs-5 fw-normal ms-2">consulta de ventas anuales 2026</span></h1>
             <div class="border-bottom border-3 w-25"></div>
          </div>
          <div>
