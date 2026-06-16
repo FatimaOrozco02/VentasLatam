@@ -57,7 +57,7 @@
             <div class="modal-header border-0 pb-0 d-flex justify-content-between align-items-center border-bottom border-3">
                 <h5 class="modal-title fw-bold text-dark fs-5 b-2" id="modalImportarCSVLabel">Importar CSV</h5>
 
-                <button type="button" class="btn btn-close-custom d-flex align-items-center justify-content-center p-0 rounded-circle text-white" data-bs-dismiss="modal" aria-label="Close"> X
+                <button type="button" class="btn btn-close-custom d-flex align-items-end justify-content-end p-0 rounded-circle text-white" data-bs-dismiss="modal" aria-label="Close"> X
 
                 </button>
             </div>

@@ -33,6 +33,24 @@ $(document).ready(function() {
       "sale": "0.00",
       "budget": "112,962.69",
       "percent": "-null%",
+      "productos_hijos": [
+        {
+          "product": "Bibliotechnia",
+          "advisor": "Melissa Loreño",
+          "sale_2026": "0.00",
+          "month_sale": "Enero",
+          "budget_2026": "5,000",
+          "month_budget": "Noviembre"
+        },
+        {
+          "product": "Taylor eBooks",
+          "advisor": "Melissa Loreño",
+          "sale_2026": "0.00",
+          "month_sale": "Enero",
+          "budget_2026": "30,000",
+          "month_budget": "Noviembre"
+        }
+    ]
 },
 {
     "country": "Ecuador",
@@ -93,7 +111,7 @@ $(document).ready(function() {
             {
                 "data": "country",
                 "orderable": false,
-                "className": "dt-control-custom text-center", 
+                "className": "dt-control-custom py-2 px-3", 
                 "render": function(data) {
                     
                     return `
@@ -114,21 +132,22 @@ $(document).ready(function() {
     $('#countryTable tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
         const row = TableAdvisor.row(tr);
-        const icon = $(this).find('i');
 
+        const icon = tr.find('td.dt-control-custom i');
+        
         if (row.child.isShown()) {
-           
             row.child.hide();
             tr.removeClass('shown');
-            icon.removeClass('fa-square-minus text-danger').addClass('fa-square-plus text-primary');
+            icon.removeClass('fa-square-minus').addClass('fa-square-plus').css("color", "#3e91ff");
+        
         } else {
             
             const rowDate = row.data();
             
-            
             row.child(generarSubtablaDinamica(rowDate.productos_hijos)).show();
             tr.addClass('shown');
-            icon.removeClass('fa-square-plus text-primary').addClass('fa-square-minus text-danger');
+            icon.removeClass('fa-square-plus').addClass('fa-square-minus').css("color", "#dc3545");
+            
         }
     });
 
@@ -139,10 +158,10 @@ $(document).ready(function() {
             return '<div class="p-3 text-muted text-center">No hay productos registrados para este cliente.</div>';
         }
 
-        const htmlSubtabla = `
+        let htmlSubtabla = `
             <div class="p-3 bg-light border-start border-end">
-                <table class="table table-dark table-striped align-middle mb-0" style="font-size: 0.85rem;">
-                    <thead style="background-color: #334155;">
+                <table class="table table-dark align-middle mb-0">
+                    <thead>
                         <tr>
                             <th class="py-2 px-3 text-white">Productos</th>
                             <th class="py-2 px-3 text-white">Asesor comercial</th>
@@ -155,13 +174,13 @@ $(document).ready(function() {
                     <tbody>`;
 
         
-        products.forEach(function(prod) {
+        product.forEach(function(prod) {
             htmlSubtabla += `
                 <tr>
                     <td class="py-2 px-3 text-secondary bg-white">${prod.product}</td>
                     <td class="py-2 px-3 text-secondary bg-white">${prod.advisor}</td>
                     <td class="py-2 px-3 text-secondary bg-white">${prod.sale_2026}</td>
-                    <td class="py-2 px-3 text-secondary bg-white">${prod.month}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_sale}</td>
                     <td class="py-2 px-3 text-secondary bg-white">${prod.budget_2026}</td>
                     <td class="py-2 px-3 text-secondary bg-white">${prod.month_budget}</td>
                 </tr>`;

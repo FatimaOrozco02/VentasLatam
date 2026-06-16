@@ -223,8 +223,8 @@
     </div>
 
     <div class="table-responsive">
-        <table id="countryTable" class="table table-bordered table-striped align-middle mb-0 text-secondary">>
-           
+        <table id="countryTable" class="table table-bordered table-striped align-middle mb-0 text-secondary">
+
             <thead class="text-white" style="background-color: #3167a5">
                 <tr>
                     <th scope="col" class="py-2 px-3 text-center" style="width: 160px;">País</th>
@@ -234,13 +234,149 @@
                     <th scope="col" class="py-2 px-3">Porcentaje</th>
                 </tr>
             </thead>
-           
+
             <tbody>
             </tbody>
         </table>
     </div>
+</div>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSendReportAwards">
+    Launch static backdrop modal
+</button>
 
+<!-- MODAL PRINCIPAL COMPLETO -->
+<div class="modal fade" id="modalSendReportAwards" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-custom-blue rounded-5 p-4 position-relative">
 
+            <button type="button" class="btn btn-close-custom d-flex align-items-end justify-content-end p-0 rounded-circle text-BLACK" data-bs-dismiss="modal" aria-label="Close">
+                X
+            </button>
 
+            <div class="modal-body p-0">
+                <div class="container-fluid px-0">
+
+                    
+                    <div class="row g-4 mb-4">
+
+                        <!-- BLOQUE IZQUIERDO -->
+                        <div class="col-12 col-md-6">
+                            <h6 class="text-dark fw-bold mb-3 d-flex align-items-center gap-2">
+                                Enviar estado del presupuesto asesor
+                                <i class="fa-regular fa-paper-plane" style="color: #3e91ff;"></i>
+                            </h6>
+                            <div class="card border border-secondary border-opacity-25 rounded-3 p-3 h-100 bg-white">
+                                <div class="row g-3">
+                                    <div class="col-6 d-flex flex-column gap-3">
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkCortar" checked>
+                                            <label class="form-check-label small text-secondary" for="chkCortar">Cortar al mes actual</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkMes">
+                                            <label class="form-check-label small text-secondary" for="chkMes">Mes actual en adelante</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkAño">
+                                            <label class="form-check-label small text-secondary" for="chkAño">Incluir todo el año</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkSoloPres">
+                                            <label class="form-check-label small text-secondary" for="chkSoloPres">Solo presupuesto</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkSoloVent">
+                                            <label class="form-check-label small text-secondary" for="chkSoloVent">Solo ventas</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column gap-3">
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkPresVent" checked>
+                                            <label class="form-check-label small text-secondary" for="chkPresVent">Presupuesto y ventas</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkOrdMes" checked>
+                                            <label class="form-check-label small text-secondary" for="chkOrdMes">Ordenar por mes</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkOrdCli">
+                                            <label class="form-check-label small text-secondary" for="chkOrdCli">Ordenar por cliente</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkOrdProd" checked>
+                                            <label class="form-check-label small text-secondary" for="chkOrdProd">Ordenar por producto</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BLOQUE DERECHO -->
+                        <div class="col-12 col-md-6">
+                            <h6 class="text-dark fw-bold mb-3 d-flex align-items-center gap-2">
+                                Destinatarios
+                                <i class="fa-regular fa-address-book" style="color: #3e91ff;"></i>
+                            </h6>
+                            <div class="card border border-secondary border-opacity-25 rounded-3 p-3 h-100 bg-white">
+                                <div class="row g-3">
+                                    <div class="col-6 d-flex flex-column gap-3">
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkVerioska" checked>
+                                            <label class="form-check-label small text-secondary" for="chkVerioska">Verioska Pozo</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkBarbara">
+                                            <label class="form-check-label small text-secondary" for="chkBarbara">Bárbara Villalobos</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkMelissa">
+                                            <label class="form-check-label small text-secondary" for="chkMelissa">Melissa Loreño</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkCarolina">
+                                            <label class="form-check-label small text-secondary" for="chkCarolina">Carolina Castro</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex flex-column gap-3">
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkLola" checked>
+                                            <label class="form-check-label small text-secondary" for="chkLola">Lola Bedón</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkCarla" checked>
+                                            <label class="form-check-label small text-secondary" for="chkCarla">Carla Alvarado</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-gray" type="checkbox" id="chkFernanda">
+                                            <label class="form-check-label small text-secondary" for="chkFernanda">Fernanda Gutiérrez</label>
+                                        </div>
+                                        <div class="form-check custom-checkbox-card">
+                                            <input class="form-check-input chk-blue" type="checkbox" id="chkDiana" checked>
+                                            <label class="form-check-label small text-secondary" for="chkDiana">Diana Chávez</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-4 mt-5">
+                        <h6 class="text-dark fw-bold mb-2 d-flex align-items-center gap-2">
+                            Correo
+                            <i class="fa-regular fa-envelope" style="color: #3e91ff;"></i>
+                        </h6>
+                        <textarea class="form-control border border-secondary border-opacity-25 rounded-2 p-3 text-secondary" id="txtCuerpoMensaje" rows="5" placeholder="Cuerpo del mensaje"></textarea>
+                    </div>
+                    <div class="modal-footer border-0 d-flex justify-content-center gap-3 pt-3">
+                        <button type="button" class="btn btn-primary rounded-3 px-4 py-2 fw-medium">Generar Excel</button>
+                        <button type="button" class="btn btn-primary rounded-3 px-4 py-2 fw-medium">Guardar</button>
+                        <button type="button" class="btn btn-light rounded-3 px-4 py-2 text-dark border-0 fw-medium" data-bs-dismiss="modal" style="background-color: #e9ecef;">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
