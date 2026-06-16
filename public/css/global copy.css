@@ -14,7 +14,7 @@
    --color_aqua: #23848c;
    --color_golden: #b7ac42;
    --color_purple: #253187;
-   --color_light_gray: #f1f5f9;
+   --color_light_gray: ;
 }
 
 @font-face {
@@ -221,43 +221,6 @@ table {
 @media (max-width: 992px) {
 
    #sidebar {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 320px;
-      height: 100vh;
-      transform: translateX(-100%);
-      z-index: 9999;
-   }
-
-   #content-view {
-      width: 100%;
-      margin-left: 0;
-   }
-
-   #sidebar.show {
-      transform: translateX(0);
-   }
-
-   #sidebar.closed {
-      width: 320px;
-      min-width: 320px;
-      padding: 1rem;
-   }
-
-}
-
-/* Sección de responsividad */
-@media (max-width: 768px) {
-   .btn-aside-menu {
-      display: block;
-   }
-
-   aside {
-      z-index: 1;
-      width: 100% !important;
-      padding: 0 !important;
-      display: none !important;
       position: fixed;
       left: 0;
       top: 0;

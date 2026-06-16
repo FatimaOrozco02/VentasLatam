@@ -5,17 +5,35 @@
          <nav class="nav flex-column gap-1 nav-list">
             <ul class="menu-lateral list-unstyled">
                <li>
-                  <a href="#" class="menu-item">
+                  <a href="<?= $baseUrl ?>/dashboard" class="menu-item">
                      <i class="fas fa-file-import"></i>
                      <span>Importar</span>
                   </a>
                </li>
 
                <li>
-                  <a href="#" class="menu-item active">
+
+                  <a href="#" class="menu-item active" onclick="toggleSubmenu(event)">
                      <i class="fas fa-edit"></i>
                      <span>Editar</span>
+
+                     <i class="fas fa-chevron-down ms-auto submenu-arrow"></i>
                   </a>
+
+                  <ul id="submenu-editar" class="submenu list-unstyled">
+
+                     <li><a href="#">Actualizar datos</a></li>
+                     <li><a href="#">Editor</a></li>
+                     <li><a href="#">Productos</a></li>
+                     <li><a href="#">Asesor comercial</a></li>
+                     <li><a href="#">Clientes</a></li>
+                     <li><a href="#">País</a></li>
+                     <li><a href="#">Región</a></li>
+                     <li><a href="#">Estado</a></li>
+                     <li><a href="#">Ciudad</a></li>
+
+                  </ul>
+
                </li>
 
                <li>
