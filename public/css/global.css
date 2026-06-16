@@ -176,7 +176,7 @@ table {
    text-decoration: none;
    color: #111827;
    font-weight: 600;
-   border-radius: 15px;
+   /* border-radius: 15px; */
    transition: .2s;
 }
 
@@ -187,12 +187,17 @@ table {
 }
 
 .menu-item:hover {
-   background: #e5e7eb;
+   background: #3f3f46;
+   color: #F8F9FA;
+   border-bottom-left-radius: 1em;
+   border-bottom-right-radius: 1em;
 }
 
 .menu-item.active {
    background: #3f3f46;
-   color: white;
+   color: #F8F9FA;
+   border-top-left-radius: 1em;
+   border-top-right-radius: 1em;
 }
 
 #sidebar {
@@ -211,6 +216,40 @@ table {
 #content-view {
    flex: 1;
    transition: all .3s ease;
+}
+
+.submenu {
+   background-color: #3f3f46;
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height .3s ease;
+   border-bottom-left-radius: 1em;
+   border-bottom-right-radius: 1em;
+}
+
+.submenu.show {
+   max-height: 500px;
+}
+
+.submenu li a {
+   display: block;
+   padding: 10px 20px 10px 55px;
+   color: #F8F9FA;
+   text-decoration: none;
+   font-size: 1.1rem;
+}
+
+.submenu li a:hover {
+   background: #F8F9FA;
+   color: #3f3f46;
+}
+
+.submenu-arrow {
+   transition: .3s;
+}
+
+.submenu-arrow.rotate {
+   transform: rotate(180deg);
 }
 
 .sticky-nav {

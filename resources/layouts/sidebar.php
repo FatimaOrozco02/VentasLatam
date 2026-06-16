@@ -1,3 +1,7 @@
+<!-- <?php
+      echo $_SERVER['REQUEST_URI'];
+      ?> -->
+
 <aside id="sidebar" class="sidebar p-3 position-relative bg-light">
 
    <div class="sticky-nav bg-dark-blue mnh-100 mnw-103">
@@ -5,7 +9,7 @@
          <nav class="nav flex-column gap-1 nav-list">
             <ul class="menu-lateral list-unstyled">
                <li>
-                  <a href="<?= $baseUrl ?>/dashboard" class="menu-item">
+                  <a href="<?= $baseUrl ?>/dashboard" class="menu-item active">
                      <i class="fas fa-file-import"></i>
                      <span>Importar</span>
                   </a>
@@ -13,7 +17,7 @@
 
                <li>
 
-                  <a href="#" class="menu-item active" onclick="toggleSubmenu(event)">
+                  <a href="#" class="menu-item" onclick="toggleSubmenu(event)">
                      <i class="fas fa-edit"></i>
                      <span>Editar</span>
 
@@ -22,15 +26,15 @@
 
                   <ul id="submenu-editar" class="submenu list-unstyled">
 
-                     <li><a href="#">Actualizar datos</a></li>
-                     <li><a href="#">Editor</a></li>
-                     <li><a href="#">Productos</a></li>
-                     <li><a href="#">Asesor comercial</a></li>
-                     <li><a href="#">Clientes</a></li>
-                     <li><a href="#">País</a></li>
-                     <li><a href="#">Región</a></li>
-                     <li><a href="#">Estado</a></li>
-                     <li><a href="#">Ciudad</a></li>
+                     <li><a href="<?= $baseUrl ?>/editar">Actualizar datos</a></li>
+                     <li><a href="<?= $baseUrl ?>/editores">Editor</a></li>
+                     <li><a href="<?= $baseUrl ?>/productos">Productos</a></li>
+                     <li><a href="<?= $baseUrl ?>/asesores">Asesor comercial</a></li>
+                     <li><a href="<?= $baseUrl ?>/clientes">Clientes</a></li>
+                     <li><a href="<?= $baseUrl ?>/paises">País</a></li>
+                     <li><a href="<?= $baseUrl ?>/regiones">Región</a></li>
+                     <li><a href="<?= $baseUrl ?>/estados">Estado</a></li>
+                     <li><a href="<?= $baseUrl ?>/ciudades">Ciudad</a></li>
 
                   </ul>
 

@@ -154,3 +154,14 @@ function toggleAside(event) {
    }
 
 }
+
+function toggleSubmenu(e) {
+
+   e.preventDefault();
+
+   $('#submenu-editar').toggleClass('show');
+
+   $(e.currentTarget)
+      .find('.submenu-arrow')
+      .toggleClass('rotate');
+}
