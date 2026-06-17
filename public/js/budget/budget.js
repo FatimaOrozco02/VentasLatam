@@ -63,11 +63,28 @@ $(document).ready(function() {
       
   ]
 
+  
+    
+    // Escucha el evento click en todas las tarjetas que tienen data-target
+    $('.card[data-target]').on('click', function() {
+        // Obtiene el ID de la tabla destino (ej. #budgetTable)
+        var targetTableId = $(this).data('target');
+        
+        // 1. Oculta absolutamente todos los divs con la clase tabla-dinamica
+        $('.tabla-dinamica').addClass('d-none');
+        
+        // 2. Busca la tabla por su ID y muestra su contenedor div correspondiente
+        $(targetTableId).closest('.tabla-dinamica').removeClass('d-none');
+    });
 
 
-    const countryTable = $("#countryTable");
 
-    const TableAdvisor = countryTable.DataTable({
+
+
+    // Para la tabla de Meta
+    const metaTable = $("#metaTable");
+
+    const TableAdvisor = metaTable.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -129,7 +146,7 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#countryTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#metaTable tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
         const row = TableAdvisor.row(tr);
 
@@ -160,7 +177,7 @@ $(document).ready(function() {
 
         let htmlSubtabla = `
             <div class="p-3 bg-light border-start border-end">
-                <table class="table table-dark align-middle mb-0">
+                <table id="metaSubTable" class="table table-dark align-middle mb-0">
                     <thead>
                         <tr>
                             <th class="py-2 px-3 text-white">Productos</th>
@@ -189,6 +206,645 @@ $(document).ready(function() {
         htmlSubtabla += `</tbody></table></div>`;
         return htmlSubtabla;
     }
+
+
+    // Para la tabla de clientes
+        const custumerTable = $("#custumerTable");
+
+    const TableAdvisorC = custumerTable.DataTable({
+        layout: {
+            topStart: 'pageLength',
+            topEnd: '',
+            bottomStart: 'paging',
+            bottomEnd: ''
+        },
+        responsive: true,
+        language: {
+            "lengthMenu": "",
+            "zeroRecords": "No se encontraron registros",
+            "info": "",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar",
+            "emptyTable": "No hay datos disponibles en la tabla",
+            "paginate": {
+                "first": "",
+                "last": "",
+                "next": " >>",
+                "previous": "<< "
+            }
+        },
+        // Clases de los componentes del DataTable
+        initComplete: function() {
+            $(`.dt-search`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-search input`).addClass("form-control me-1");
+            $(`.dt-length label`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-length select`).addClass("form-select w-70px");
+            $(`.dt-paging nav[aria-label='pagination']`).addClass("d-flex justify-content-end align-items-center gap-2");
+            $(`.dt-paging-button`).addClass("p-0 rounded-2 fw-bold");
+            $(`.dt-paging-button`).css("color","var(--color_light_blue)!important");
+        },
+
+        // ajax:{
+        //     url:'',
+        //     type:"GET",
+        //     dataSrc:"data"
+            data: datosEjemplo,
+        // }
+        "columns": [
+            {
+                "data": "country",
+                "orderable": false,
+                "className": "dt-control-custom py-2 px-3", 
+                "render": function(data) {
+                    
+                    return `
+                        <i class="fa-solid fa-square-plus" style="color: #3e91ff;"></i>
+                        <span class="ms-1 align-middle">${data}</span>
+                    `;
+                }
+            },
+            { "data": "custumer", "orderable": false },
+            { "data": "sale", "orderable": false },
+            { "data": "budget", "orderable": false },
+            { "data": "percent", "orderable": false }
+        ],
+
+    });
+
+    // PARA VER LO DESPEGABLE DE CADA PAÍS
+    $('#custumerTable tbody').on('click', 'td.dt-control-custom', function () {
+        const tr = $(this).closest('tr');
+        const row = TableAdvisorC.row(tr);
+
+        const icon = tr.find('td.dt-control-custom i');
+        
+        if (row.child.isShown()) {
+            row.child.hide();
+            tr.removeClass('shown');
+            icon.removeClass('fa-square-minus').addClass('fa-square-plus').css("color", "#3e91ff");
+        
+        } else {
+            
+            const rowDate = row.data();
+            
+            row.child(generarSubtablaDinamica(rowDate.productos_hijos)).show();
+            tr.addClass('shown');
+            icon.removeClass('fa-square-plus').addClass('fa-square-minus').css("color", "#dc3545");
+            
+        }
+    });
+
+
+    // Función que lee el sub-arreglo del AJAX y fabrica las filas internas
+    function generarSubtablaDinamica(product) {
+        if (!product || product.length === 0) {
+            return '<div class="p-3 text-muted text-center">No hay productos registrados para este cliente.</div>';
+        }
+
+        let htmlSubtablaC = `
+            <div class="p-3 bg-light border-start border-end">
+                <table id="metaSubTable" class="table table-dark align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-3 text-white">Productos</th>
+                            <th class="py-2 px-3 text-white">Asesor comercial</th>
+                            <th class="py-2 px-3 text-white">Venta 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                            <th class="py-2 px-3 text-white">Presupuesto 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+        
+        product.forEach(function(prod) {
+            htmlSubtablaC += `
+                <tr>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.product}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.advisor}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.sale_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_sale}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.budget_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_budget}</td>
+                </tr>`;
+        });
+
+        htmlSubtablaC += `</tbody></table></div>`;
+        return htmlSubtablaC;
+    }
+
+
+    // Para la tabla de presupuestos
+        const budgetTable = $("#budgetTable");
+
+    const TableAdvisorP = budgetTable.DataTable({
+        layout: {
+            topStart: 'pageLength',
+            topEnd: '',
+            bottomStart: 'paging',
+            bottomEnd: ''
+        },
+        responsive: true,
+        language: {
+            "lengthMenu": "",
+            "zeroRecords": "No se encontraron registros",
+            "info": "",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar",
+            "emptyTable": "No hay datos disponibles en la tabla",
+            "paginate": {
+                "first": "",
+                "last": "",
+                "next": " >>",
+                "previous": "<< "
+            }
+        },
+        // Clases de los componentes del DataTable
+        initComplete: function() {
+            $(`.dt-search`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-search input`).addClass("form-control me-1");
+            $(`.dt-length label`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-length select`).addClass("form-select w-70px");
+            $(`.dt-paging nav[aria-label='pagination']`).addClass("d-flex justify-content-end align-items-center gap-2");
+            $(`.dt-paging-button`).addClass("p-0 rounded-2 fw-bold");
+            $(`.dt-paging-button`).css("color","var(--color_light_blue)!important");
+        },
+
+        // ajax:{
+        //     url:'',
+        //     type:"GET",
+        //     dataSrc:"data"
+            data: datosEjemplo,
+        // }
+        "columns": [
+            {
+                "data": "country",
+                "orderable": false,
+                "className": "dt-control-custom py-2 px-3", 
+                "render": function(data) {
+                    
+                    return `
+                        <i class="fa-solid fa-square-plus" style="color: #3e91ff;"></i>
+                        <span class="ms-1 align-middle">${data}</span>
+                    `;
+                }
+            },
+            { "data": "custumer", "orderable": false },
+            { "data": "sale", "orderable": false },
+            { "data": "budget", "orderable": false },
+            { "data": "percent", "orderable": false }
+        ],
+
+    });
+
+    // PARA VER LO DESPEGABLE DE CADA PAÍS
+    $('#budgetTable tbody').on('click', 'td.dt-control-custom', function () {
+        const tr = $(this).closest('tr');
+        const row = TableAdvisorP.row(tr);
+
+        const icon = tr.find('td.dt-control-custom i');
+        
+        if (row.child.isShown()) {
+            row.child.hide();
+            tr.removeClass('shown');
+            icon.removeClass('fa-square-minus').addClass('fa-square-plus').css("color", "#3e91ff");
+        
+        } else {
+            
+            const rowDate = row.data();
+            
+            row.child(generarSubtablaDinamica(rowDate.productos_hijos)).show();
+            tr.addClass('shown');
+            icon.removeClass('fa-square-plus').addClass('fa-square-minus').css("color", "#dc3545");
+            
+        }
+    });
+
+
+    // Función que lee el sub-arreglo del AJAX y fabrica las filas internas
+    function generarSubtablaDinamica(product) {
+        if (!product || product.length === 0) {
+            return '<div class="p-3 text-muted text-center">No hay productos registrados para este cliente.</div>';
+        }
+
+        let htmlSubtablaP = `
+            <div class="p-3 bg-light border-start border-end">
+                <table id="metaSubTable" class="table table-dark align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-3 text-white">Productos</th>
+                            <th class="py-2 px-3 text-white">Asesor comercial</th>
+                            <th class="py-2 px-3 text-white">Venta 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                            <th class="py-2 px-3 text-white">Presupuesto 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+        
+        product.forEach(function(prod) {
+            htmlSubtablaP += `
+                <tr>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.product}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.advisor}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.sale_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_sale}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.budget_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_budget}</td>
+                </tr>`;
+        });
+
+        htmlSubtablaP += `</tbody></table></div>`;
+        return htmlSubtablaP;
+    }
+
+
+    
+    // Para la tabla de NO PRESUPUESTADOS
+        const noBudgetTable = $("#noBudgetTable");
+
+    const TableAdvisorNP = noBudgetTable.DataTable({
+        layout: {
+            topStart: 'pageLength',
+            topEnd: '',
+            bottomStart: 'paging',
+            bottomEnd: ''
+        },
+        responsive: true,
+        language: {
+            "lengthMenu": "",
+            "zeroRecords": "No se encontraron registros",
+            "info": "",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar",
+            "emptyTable": "No hay datos disponibles en la tabla",
+            "paginate": {
+                "first": "",
+                "last": "",
+                "next": " >>",
+                "previous": "<< "
+            }
+        },
+        // Clases de los componentes del DataTable
+        initComplete: function() {
+            $(`.dt-search`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-search input`).addClass("form-control me-1");
+            $(`.dt-length label`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-length select`).addClass("form-select w-70px");
+            $(`.dt-paging nav[aria-label='pagination']`).addClass("d-flex justify-content-end align-items-center gap-2");
+            $(`.dt-paging-button`).addClass("p-0 rounded-2 fw-bold");
+            $(`.dt-paging-button`).css("color","var(--color_light_blue)!important");
+        },
+
+        // ajax:{
+        //     url:'',
+        //     type:"GET",
+        //     dataSrc:"data"
+            data: datosEjemplo,
+        // }
+        "columns": [
+            {
+                "data": "country",
+                "orderable": false,
+                "className": "dt-control-custom py-2 px-3", 
+                "render": function(data) {
+                    
+                    return `
+                        <i class="fa-solid fa-square-plus" style="color: #3e91ff;"></i>
+                        <span class="ms-1 align-middle">${data}</span>
+                    `;
+                }
+            },
+            { "data": "custumer", "orderable": false },
+            { "data": "sale", "orderable": false },
+            { "data": "budget", "orderable": false },
+            { "data": "percent", "orderable": false }
+        ],
+
+    });
+
+    // PARA VER LO DESPEGABLE DE CADA PAÍS
+    $('#noBudgetTable tbody').on('click', 'td.dt-control-custom', function () {
+        const tr = $(this).closest('tr');
+        const row = TableAdvisorNP.row(tr);
+
+        const icon = tr.find('td.dt-control-custom i');
+        
+        if (row.child.isShown()) {
+            row.child.hide();
+            tr.removeClass('shown');
+            icon.removeClass('fa-square-minus').addClass('fa-square-plus').css("color", "#3e91ff");
+        
+        } else {
+            
+            const rowDate = row.data();
+            
+            row.child(generarSubtablaDinamica(rowDate.productos_hijos)).show();
+            tr.addClass('shown');
+            icon.removeClass('fa-square-plus').addClass('fa-square-minus').css("color", "#dc3545");
+            
+        }
+    });
+
+
+    // Función que lee el sub-arreglo del AJAX y fabrica las filas internas
+    function generarSubtablaDinamica(product) {
+        if (!product || product.length === 0) {
+            return '<div class="p-3 text-muted text-center">No hay productos registrados para este cliente.</div>';
+        }
+
+        let htmlSubtablaNP = `
+            <div class="p-3 bg-light border-start border-end">
+                <table id="metaSubTable" class="table table-dark align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-3 text-white">Productos</th>
+                            <th class="py-2 px-3 text-white">Asesor comercial</th>
+                            <th class="py-2 px-3 text-white">Venta 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                            <th class="py-2 px-3 text-white">Presupuesto 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+        
+        product.forEach(function(prod) {
+            htmlSubtablaNP += `
+                <tr>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.product}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.advisor}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.sale_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_sale}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.budget_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_budget}</td>
+                </tr>`;
+        });
+
+        htmlSubtablaNP += `</tbody></table></div>`;
+        return htmlSubtablaNP;
+    }
+
+
+      // Para la tabla de POR FACTURAR
+        const invoiceTable = $("#invoiceTable");
+
+    const TableAdvisorF = invoiceTable.DataTable({
+        layout: {
+            topStart: 'pageLength',
+            topEnd: '',
+            bottomStart: 'paging',
+            bottomEnd: ''
+        },
+        responsive: true,
+        language: {
+            "lengthMenu": "",
+            "zeroRecords": "No se encontraron registros",
+            "info": "",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar",
+            "emptyTable": "No hay datos disponibles en la tabla",
+            "paginate": {
+                "first": "",
+                "last": "",
+                "next": " >>",
+                "previous": "<< "
+            }
+        },
+        // Clases de los componentes del DataTable
+        initComplete: function() {
+            $(`.dt-search`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-search input`).addClass("form-control me-1");
+            $(`.dt-length label`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-length select`).addClass("form-select w-70px");
+            $(`.dt-paging nav[aria-label='pagination']`).addClass("d-flex justify-content-end align-items-center gap-2");
+            $(`.dt-paging-button`).addClass("p-0 rounded-2 fw-bold");
+            $(`.dt-paging-button`).css("color","var(--color_light_blue)!important");
+        },
+
+        // ajax:{
+        //     url:'',
+        //     type:"GET",
+        //     dataSrc:"data"
+            data: datosEjemplo,
+        // }
+        "columns": [
+            {
+                "data": "country",
+                "orderable": false,
+                "className": "dt-control-custom py-2 px-3", 
+                "render": function(data) {
+                    
+                    return `
+                        <i class="fa-solid fa-square-plus" style="color: #3e91ff;"></i>
+                        <span class="ms-1 align-middle">${data}</span>
+                    `;
+                }
+            },
+            { "data": "custumer", "orderable": false },
+            { "data": "sale", "orderable": false },
+            { "data": "budget", "orderable": false },
+            { "data": "percent", "orderable": false }
+        ],
+
+    });
+
+    // PARA VER LO DESPEGABLE DE CADA PAÍS
+    $('#invoiceTable tbody').on('click', 'td.dt-control-custom', function () {
+        const tr = $(this).closest('tr');
+        const row = TableAdvisorF.row(tr);
+
+        const icon = tr.find('td.dt-control-custom i');
+        
+        if (row.child.isShown()) {
+            row.child.hide();
+            tr.removeClass('shown');
+            icon.removeClass('fa-square-minus').addClass('fa-square-plus').css("color", "#3e91ff");
+        
+        } else {
+            
+            const rowDate = row.data();
+            
+            row.child(generarSubtablaDinamica(rowDate.productos_hijos)).show();
+            tr.addClass('shown');
+            icon.removeClass('fa-square-plus').addClass('fa-square-minus').css("color", "#dc3545");
+            
+        }
+    });
+
+
+    // Función que lee el sub-arreglo del AJAX y fabrica las filas internas
+    function generarSubtablaDinamica(product) {
+        if (!product || product.length === 0) {
+            return '<div class="p-3 text-muted text-center">No hay productos registrados para este cliente.</div>';
+        }
+
+        let htmlSubtablaF = `
+            <div class="p-3 bg-light border-start border-end">
+                <table id="metaSubTable" class="table table-dark align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-3 text-white">Productos</th>
+                            <th class="py-2 px-3 text-white">Asesor comercial</th>
+                            <th class="py-2 px-3 text-white">Venta 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                            <th class="py-2 px-3 text-white">Presupuesto 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+        
+        product.forEach(function(prod) {
+            htmlSubtablaF += `
+                <tr>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.product}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.advisor}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.sale_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_sale}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.budget_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_budget}</td>
+                </tr>`;
+        });
+
+        htmlSubtablaF += `</tbody></table></div>`;
+        return htmlSubtablaF;
+    }
+
+
+
+    
+      // Para la tabla de ESTE MES
+        const thisMonthTable = $("#thisMonthTable");
+
+    const TableAdvisorM = thisMonthTable.DataTable({
+        layout: {
+            topStart: 'pageLength',
+            topEnd: '',
+            bottomStart: 'paging',
+            bottomEnd: ''
+        },
+        responsive: true,
+        language: {
+            "lengthMenu": "",
+            "zeroRecords": "No se encontraron registros",
+            "info": "",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar",
+            "emptyTable": "No hay datos disponibles en la tabla",
+            "paginate": {
+                "first": "",
+                "last": "",
+                "next": " >>",
+                "previous": "<< "
+            }
+        },
+        // Clases de los componentes del DataTable
+        initComplete: function() {
+            $(`.dt-search`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-search input`).addClass("form-control me-1");
+            $(`.dt-length label`).addClass("d-flex align-items-center gap-3");
+            $(`.dt-length select`).addClass("form-select w-70px");
+            $(`.dt-paging nav[aria-label='pagination']`).addClass("d-flex justify-content-end align-items-center gap-2");
+            $(`.dt-paging-button`).addClass("p-0 rounded-2 fw-bold");
+            $(`.dt-paging-button`).css("color","var(--color_light_blue)!important");
+        },
+
+        // ajax:{
+        //     url:'',
+        //     type:"GET",
+        //     dataSrc:"data"
+            data: datosEjemplo,
+        // }
+        "columns": [
+            {
+                "data": "country",
+                "orderable": false,
+                "className": "dt-control-custom py-2 px-3", 
+                "render": function(data) {
+                    
+                    return `
+                        <i class="fa-solid fa-square-plus" style="color: #3e91ff;"></i>
+                        <span class="ms-1 align-middle">${data}</span>
+                    `;
+                }
+            },
+            { "data": "custumer", "orderable": false },
+            { "data": "sale", "orderable": false },
+            { "data": "budget", "orderable": false },
+            { "data": "percent", "orderable": false }
+        ],
+
+    });
+
+    // PARA VER LO DESPEGABLE DE CADA PAÍS
+    $('#thisMonthTable tbody').on('click', 'td.dt-control-custom', function () {
+        const tr = $(this).closest('tr');
+        const row = TableAdvisorM.row(tr);
+
+        const icon = tr.find('td.dt-control-custom i');
+        
+        if (row.child.isShown()) {
+            row.child.hide();
+            tr.removeClass('shown');
+            icon.removeClass('fa-square-minus').addClass('fa-square-plus').css("color", "#3e91ff");
+        
+        } else {
+            
+            const rowDate = row.data();
+            
+            row.child(generarSubtablaDinamica(rowDate.productos_hijos)).show();
+            tr.addClass('shown');
+            icon.removeClass('fa-square-plus').addClass('fa-square-minus').css("color", "#dc3545");
+            
+        }
+    });
+
+
+    // Función que lee el sub-arreglo del AJAX y fabrica las filas internas
+    function generarSubtablaDinamica(product) {
+        if (!product || product.length === 0) {
+            return '<div class="p-3 text-muted text-center">No hay productos registrados para este cliente.</div>';
+        }
+
+        let htmlSubtablaM = `
+            <div class="p-3 bg-light border-start border-end">
+                <table id="metaSubTable" class="table table-dark align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-3 text-white">Productos</th>
+                            <th class="py-2 px-3 text-white">Asesor comercial</th>
+                            <th class="py-2 px-3 text-white">Venta 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                            <th class="py-2 px-3 text-white">Presupuesto 2026</th>
+                            <th class="py-2 px-3 text-white">Mes</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+        
+        product.forEach(function(prod) {
+            htmlSubtablaM += `
+                <tr>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.product}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.advisor}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.sale_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_sale}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.budget_2026}</td>
+                    <td class="py-2 px-3 text-secondary bg-white">${prod.month_budget}</td>
+                </tr>`;
+        });
+
+        htmlSubtablaM += `</tbody></table></div>`;
+        return htmlSubtablaM;
+    }
+
 
 });
 

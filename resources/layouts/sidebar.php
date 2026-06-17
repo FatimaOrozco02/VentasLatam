@@ -41,10 +41,19 @@
                </li>
 
                <li>
-                  <a href="#" class="menu-item">
+                  <a  href="#" class="menu-item" onclick="toggleSubmenu(event)">
                      <i class="fas fa-arrow-trend-up"></i>
                      <span>Presupuesto</span>
+                     <i class="fas fa-chevron-down ms-auto submenu-arrow"></i>
                   </a>
+                  <ul id="submenu-presupuesto" class="submenu list-unstyled">
+
+                     <li><a href="<?= $baseUrl ?>/presupuesto">Presupuesto asesor</a></li>
+                     <li><a href="<?= $baseUrl ?>/presupuesto/presupuesto_meta">Presupuesto meta</a></li>
+                     <li><a href="<?= $baseUrl ?>/presupuesto/venta">Venta</a></li>
+
+                  </ul>
+
                </li>
 
                <li>

@@ -59,7 +59,7 @@
 
             <!-- META -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
+                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0" data-target="#metaTable" style="cursor: pointer;">
                     <div class="card-header-1 text-white border-0 py-2 px-3 rounded-top-">
                         <h5 class="mb-2 fs-6 fw-normal">Meta</h5>
                     </div>
@@ -79,7 +79,7 @@
 
             <!-- CLIENTES -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
+                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0" data-target="#custumerTable" style="cursor: pointer;">
                     <div class="card-header-2 text-white border-0 py-2 px-3 rounded-top-">
                         <h5 class="mb-2 fs-6 fw-normal">Clientes</h5>
                     </div>
@@ -99,7 +99,7 @@
 
             <!-- PRESUPUESTADOS -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
+                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0" data-target="#budgetTable" style="cursor: pointer;">
                     <div class="card-header-3 text-white border-0 py-2 px-3 rounded-top-">
                         <h5 class="mb-2 fs-6 fw-normal">Presupuestados</h5>
                     </div>
@@ -119,7 +119,7 @@
 
             <!-- No presupuestado -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
+                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0" data-target="#noBudgetTable" style="cursor: pointer;">
                     <div class="card-header-4 text-white border-0 py-2 px-3 rounded-top-">
                         <h5 class="mb-2 fs-6 fw-normal">No presupuestado</h5>
                     </div>
@@ -139,7 +139,7 @@
 
             <!-- Por facturar -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
+                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0" data-target="#invoiceTable" style="cursor: pointer;">
                     <div class="card-header-5 text-white border-0 py-2 px-3 rounded-top-">
                         <h5 class="mb-2 fs-6 fw-normal">Por facturar</h5>
                     </div>
@@ -159,7 +159,7 @@
 
             <!-- este mes -->
             <div class="col-12 col-sm-6 col-md-4 col-xl">
-                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0">
+                <div class="card stat-card bg-success overflow-hidden rounded-4 border-0" data-target="#thisMonthTable" style="cursor: pointer;">
                     <div class="card-header-6 text-white border-0 py-2 px-3 rounded-top-">
                         <h5 class="mb-2 fs-6 fw-normal">Este mes</h5>
                     </div>
@@ -171,7 +171,7 @@
                             </span>
                         </div>
                         <div class="pt-2">
-                            <p class="card-text text-muted small mb-0">Monto de venta:<br><span class="diamond-amount">$266,308.69</span>
+                            <p class="card-text text-muted small mb-0">Monto de venta:<br><span class="diamond-amount">$266,308.69</span></p>
                         </div>
                     </div>
                 </div>
@@ -222,8 +222,98 @@
         </div>
     </div>
 
-    <div class="table-responsive">
-        <table id="countryTable" class="table table-bordered table-striped align-middle mb-0 text-secondary">
+    <div class="table-responsive tabla-dinamica">
+        <table id="metaTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
+
+            <thead class="text-white" style="background-color: #3167a5">
+                <tr>
+                    <th scope="col" class="py-2 px-3 text-center" style="width: 160px;">País</th>
+                    <th scope="col" class="py-2 px-3">Clientes</th>
+                    <th scope="col" class="py-2 px-3">Venta</th>
+                    <th scope="col" class="py-2 px-3">Presupuesto</th>
+                    <th scope="col" class="py-2 px-3">Porcentaje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="table-responsive tabla-dinamica d-none">
+        <table id="custumerTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
+
+            <thead class="text-white" style="background-color: #3167a5">
+                <tr>
+                    <th scope="col" class="py-2 px-3 text-center" style="width: 160px;">País</th>
+                    <th scope="col" class="py-2 px-3">Clientes</th>
+                    <th scope="col" class="py-2 px-3">Venta</th>
+                    <th scope="col" class="py-2 px-3">Presupuesto</th>
+                    <th scope="col" class="py-2 px-3">Porcentaje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive tabla-dinamica d-none">
+        <table id="budgetTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
+
+            <thead class="text-white" style="background-color: #3167a5">
+                <tr>
+                    <th scope="col" class="py-2 px-3 text-center" style="width: 160px;">País</th>
+                    <th scope="col" class="py-2 px-3">Clientes</th>
+                    <th scope="col" class="py-2 px-3">Venta</th>
+                    <th scope="col" class="py-2 px-3">Presupuesto</th>
+                    <th scope="col" class="py-2 px-3">Porcentaje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive tabla-dinamica d-none">
+        <table id="noBudgetTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
+
+            <thead class="text-white" style="background-color: #3167a5">
+                <tr>
+                    <th scope="col" class="py-2 px-3 text-center" style="width: 160px;">País</th>
+                    <th scope="col" class="py-2 px-3">Clientes</th>
+                    <th scope="col" class="py-2 px-3">Venta</th>
+                    <th scope="col" class="py-2 px-3">Presupuesto</th>
+                    <th scope="col" class="py-2 px-3">Porcentaje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive tabla-dinamica d-none">
+        <table id="invoiceTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
+
+            <thead class="text-white" style="background-color: #3167a5">
+                <tr>
+                    <th scope="col" class="py-2 px-3 text-center" style="width: 160px;">País</th>
+                    <th scope="col" class="py-2 px-3">Clientes</th>
+                    <th scope="col" class="py-2 px-3">Venta</th>
+                    <th scope="col" class="py-2 px-3">Presupuesto</th>
+                    <th scope="col" class="py-2 px-3">Porcentaje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive tabla-dinamica d-none">
+        <table id="thisMonthTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
 
             <thead class="text-white" style="background-color: #3167a5">
                 <tr>
@@ -249,11 +339,13 @@
 <!-- MODAL PRINCIPAL COMPLETO -->
 <div class="modal fade" id="modalSendReportAwards" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content modal-custom-blue rounded-5 p-4 position-relative">
+        <div class="modal-content modal-custom-border rounded-5 p-4 border-4">
 
-            <button type="button" class="btn btn-close-custom d-flex align-items-end justify-content-end p-0 rounded-circle text-BLACK" data-bs-dismiss="modal" aria-label="Close">
+            <div class="modal-header border-0 pb-0 d-flex justify-content-end align-items-end">    
+                <button type="button" class="btn btn-close-custom  p-0 rounded-circle text-white" data-bs-dismiss="modal" aria-label="Close">
                 X
-            </button>
+                </button>
+            </div>    
 
             <div class="modal-body p-0">
                 <div class="container-fluid px-0">

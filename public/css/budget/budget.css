@@ -1,0 +1,88 @@
+.modal-custom-border {
+    border: 4px solid var(--color_light_blue) !important; 
+}
+
+.btn-close-custom {
+    border: none;
+    background: var(--color_light_blue);
+    width: 25px;
+
+}
+
+#metaTable thead tr {
+    --bs-table-bg: var(--color_dark_blue) !important; 
+    
+}
+
+#custumerTable thead tr {
+    --bs-table-bg: var( --color_green) !important; 
+    
+}
+
+#budgetTable thead tr {
+    --bs-table-bg: var(--color_red) !important; 
+    
+}
+
+#noBudgetTable thead tr {
+    --bs-table-bg: var(--color_aqua) !important; 
+    
+}
+
+#invoiceTable thead tr {
+    --bs-table-bg: var( --color_golden) !important; 
+    
+}
+
+#thisMonthTable thead tr {
+    --bs-table-bg: var(--color_purple) !important; 
+    
+}
+
+
+#metaTable,#metaTable th,#metaTable td,
+#custumerTable,#custumerTable th,#custumerTable td,
+#budgetTable,#budgetTable th,#budgetTable td,
+#noBudgetTable,#noBudgetTable th,#noBudgetTable td,
+#invoiceTable,#invoiceTable th,#invoiceTable td,
+#thisMonthTable,#thisMonthTable th,#thisMonthTable td {
+    border-color: #cbd5e1 !important; 
+}
+
+
+#metaTable tbody tr:nth-of-type(even),
+#custumerTable tbody tr:nth-of-type(even),
+#budgetTable tbody tr:nth-of-type(even),
+#noBudgetTable tbody tr:nth-of-type(even),
+#invoiceTable tbody tr:nth-of-type(even),
+#thisMonthTable tbody tr:nth-of-type(even) {
+    --bs-table-accent-bg: #f1f5f9 !important; 
+    
+}
+
+#metaTable.table tbody tr td,
+#custumerTable.table tbody tr td,
+#budgetTable.table tbody tr td,
+#noBudgetTable.table tbody tr td,
+#invoiceTable.table tbody tr td,
+#thisMonthTable.table tbody tr td {
+    --bs-table-bg-type: transparent !important;
+    background-image: none !important;
+}
+
+
+#metaTable.table tbody tr:nth-of-type(odd) td,
+#custumerTable.table tbody tr:nth-of-type(odd) td,
+#budgetTable.table tbody tr:nth-of-type(odd) td,
+#noBudgetTable.table tbody tr:nth-of-type(odd) td,
+#invoiceTable.table tbody tr:nth-of-type(odd) td,
+#thisMonthTable.table tbody tr:nth-of-type(odd) td {
+    background-color: #f7fafa !important;
+}
+
+
+#metaSubTable thead tr {
+    --bs-table-bg: #080808ff!important; 
+    
+}
+

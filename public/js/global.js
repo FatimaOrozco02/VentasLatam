@@ -165,3 +165,15 @@ function toggleSubmenu(e) {
       .find('.submenu-arrow')
       .toggleClass('rotate');
 }
+
+
+function toggleSubmenu(e) {
+
+   e.preventDefault();
+
+   $('#submenu-presupuesto').toggleClass('show');
+
+   $(e.currentTarget)
+      .find('.submenu-arrow')
+      .toggleClass('rotate');
+}
