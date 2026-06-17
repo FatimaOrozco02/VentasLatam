@@ -37,6 +37,10 @@
    background-color: var(--color_light_blue);
 }
 
+.color-main {
+   color: var(--color_light_blue);
+}
+
 
 h2,
 h3,
@@ -85,8 +89,7 @@ h1 {
 }
 
 /*Buttons*/
-.btn-primary,
-.btn-secondary {
+.btn-primary {
    background-color: var(--color_light_blue);
    border: none;
 }
@@ -255,6 +258,17 @@ table {
 .sticky-nav {
    position: sticky;
    top: 5px;
+}
+
+.modal-content {
+   padding: 10px;
+   border-radius: 2em;
+   border: 4px solid #3E97FF;
+}
+
+.button-close-modal {
+   background: #fff;
+   opacity: 1;
 }
 
 @media (max-width: 992px) {

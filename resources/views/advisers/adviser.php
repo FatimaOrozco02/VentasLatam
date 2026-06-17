@@ -14,7 +14,9 @@
                </div>
 
                <div class="mb-3">
-                  <a type="button" class="btn btn-secondary btn-sm btn-responsivo border-0 text-white rounded-3 py-2 px-4" href="<?= $baseUrl ?>/editar/form">Crear</a>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adviserModal">
+                     Crear
+                  </button>
                </div>
 
                <div class="row">
@@ -56,22 +58,51 @@
                            <!-- columna 0  -->
                            <th>ID</th>
                            <!-- columna 1  -->
-                           <th>Código</th>
+                           <th>Nombre del asesor</th>
                            <!-- columna 2 -->
-                           <th>Clientes</th>
+                           <th>Iniciales</th>
                            <!-- columna 3 -->
-                           <th>Nombre o descripción</th>
-                           <!-- columna 4 -->
-                           <th>Presupuesto</th>
-                           <!-- columna 5 -->
-                           <th>Producto</th>
-                           <!-- columna 6 -->
                            <th>Opciones</th>
                         </tr>
                      </thead>
                   </table>
                </div>
 
+            </div>
+         </div>
+
+         <!-- Modal -->
+         <div class="modal fade" id="adviserModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="adviserModalLabel">
+            <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h1 class="modal-title fs-5" id="adviserModalLabel">Editar información</h1>
+                     <button type="button" class="btn-close button-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-2x color-main"></i></button>
+                  </div>
+                  <div class="modal-body">
+                     <form>
+                        <div class="mb-3">
+                           <label for="name" class="form-label">Cambiar nombre</label>
+                           <input type="text" class="form-control" id="name" name="editorName">
+                        </div>
+                        <div class="mb-3">
+                           <label for="initials" class="form-label">Iniciales</label>
+                           <input type="password" class="form-control" id="initials" name="editorInitials">
+                        </div>
+                        <div class="mb-3">
+                           <label for="email" class="form-label">Correo</label>
+                           <input type="email" class="form-control" id="email" name="editorEmail">
+                        </div>
+
+                        <div class="text-center mt-4 mb-3">
+                           <button type="submit" class="btn btn-primary">Guardar</button>
+                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+
+                     </form>
+                  </div>
+
+               </div>
             </div>
          </div>
 
