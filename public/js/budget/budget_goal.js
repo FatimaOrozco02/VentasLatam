@@ -80,7 +80,7 @@ $(document).ready(function() {
     // para abrir el modal
 
      $("#btn-send, #bnt-awarded").on("click",  function() {
-        $("#modalSendReportAwards").modal("show");
+        $("#modalSendReportAwards2").modal("show");
     });
 
 
@@ -89,9 +89,9 @@ $(document).ready(function() {
 
 
     // Para la tabla de Meta
-    const metaTable = $("#metaTable");
+    const metaTable2 = $("#metaTable2");
 
-    const TableAdvisor = metaTable.DataTable({
+    const TableAdvisor2 = metaTable2.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -153,9 +153,9 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#metaTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#metaTable2 tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
-        const row = TableAdvisor.row(tr);
+        const row = TableAdvisor2.row(tr);
 
         const icon = tr.find('td.dt-control-custom i');
         
@@ -216,9 +216,9 @@ $(document).ready(function() {
 
 
     // Para la tabla de clientes
-        const custumerTable = $("#custumerTable");
+        const custumerTable2 = $("#custumerTable2");
 
-    const TableAdvisorC = custumerTable.DataTable({
+    const TableAdvisorC2 = custumerTable2.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -280,9 +280,9 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#custumerTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#custumerTable2 tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
-        const row = TableAdvisorC.row(tr);
+        const row = TableAdvisorC2.row(tr);
 
         const icon = tr.find('td.dt-control-custom i');
         
@@ -343,9 +343,9 @@ $(document).ready(function() {
 
 
     // Para la tabla de presupuestos
-        const budgetTable = $("#budgetTable");
+        const budgetTable2 = $("#budgetTable2");
 
-    const TableAdvisorP = budgetTable.DataTable({
+    const TableAdvisorP2 = budgetTable2.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -407,9 +407,9 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#budgetTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#budgetTable2 tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
-        const row = TableAdvisorP.row(tr);
+        const row = TableAdvisorP2.row(tr);
 
         const icon = tr.find('td.dt-control-custom i');
         
@@ -471,9 +471,9 @@ $(document).ready(function() {
 
     
     // Para la tabla de NO PRESUPUESTADOS
-        const noBudgetTable = $("#noBudgetTable");
+        const noBudgetTable2 = $("#noBudgetTable2");
 
-    const TableAdvisorNP = noBudgetTable.DataTable({
+    const TableAdvisorNP2 = noBudgetTable2.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -535,9 +535,9 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#noBudgetTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#noBudgetTable2 tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
-        const row = TableAdvisorNP.row(tr);
+        const row = TableAdvisorNP2.row(tr);
 
         const icon = tr.find('td.dt-control-custom i');
         
@@ -598,9 +598,9 @@ $(document).ready(function() {
 
 
       // Para la tabla de POR FACTURAR
-        const invoiceTable = $("#invoiceTable");
+        const invoiceTable2 = $("#invoiceTable2");
 
-    const TableAdvisorF = invoiceTable.DataTable({
+    const TableAdvisorF2 = invoiceTable2.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -662,9 +662,9 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#invoiceTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#invoiceTable2 tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
-        const row = TableAdvisorF.row(tr);
+        const row = TableAdvisorF2.row(tr);
 
         const icon = tr.find('td.dt-control-custom i');
         
@@ -727,9 +727,9 @@ $(document).ready(function() {
 
     
       // Para la tabla de ESTE MES
-        const thisMonthTable = $("#thisMonthTable");
+        const thisMonthTable2 = $("#thisMonthTable2");
 
-    const TableAdvisorM = thisMonthTable.DataTable({
+    const TableAdvisorM2 = thisMonthTable2.DataTable({
         layout: {
             topStart: 'pageLength',
             topEnd: '',
@@ -791,9 +791,9 @@ $(document).ready(function() {
     });
 
     // PARA VER LO DESPEGABLE DE CADA PAÍS
-    $('#thisMonthTable tbody').on('click', 'td.dt-control-custom', function () {
+    $('#thisMonthTable2 tbody').on('click', 'td.dt-control-custom', function () {
         const tr = $(this).closest('tr');
-        const row = TableAdvisorM.row(tr);
+        const row = TableAdvisorM2.row(tr);
 
         const icon = tr.find('td.dt-control-custom i');
         

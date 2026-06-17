@@ -27,7 +27,7 @@
 
             <div class="col-12 col-md-auto d-flex justify-content-center gap-2">
 
-                <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-0 shadow-sm" style="width: 40px; height: 40px;" title="Enviar Reporte">
+                <button id="btn-send" class="btn btn-primary  rounded-circle d-flex align-items-center justify-content-center p-0 shadow-sm" style="width: 40px; height: 40px;" title="Enviar Reporte">
                     <i class="fa-solid fa-file-import" style="color: #ffff;"></i>
                 </button>
 
@@ -35,7 +35,7 @@
                     <i class="fa-solid fa-file-lines" style="color: #ffff;"></i>
                 </button>
 
-                <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-0 shadow-sm" style="width: 40px; height: 40px;" title="Adjudicadas">
+                <button id="bnt-awarded" class="btn btn-primary  rounded-circle d-flex align-items-center justify-content-center p-0 shadow-sm" style="width: 40px; height: 40px;" title="Adjudicadas">
                     <i class="fa-solid fa-file-invoice-dollar" style="color: #ffff;"></i>
                 </button>
             </div>
@@ -239,7 +239,7 @@
             </tbody>
         </table>
     </div>
-    
+
     <div class="table-responsive tabla-dinamica d-none">
         <table id="custumerTable" class="table table-bordered table-striped align-middle mb-0 text-secondary ">
 
@@ -332,25 +332,31 @@
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSendReportAwards">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSendReportAwards">
     Launch static backdrop modal
-</button>
+</button> -->
 
 <!-- MODAL PRINCIPAL COMPLETO -->
 <div class="modal fade" id="modalSendReportAwards" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalPresupuestoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content modal-custom-border rounded-5 p-4 border-4">
 
-            <div class="modal-header border-0 pb-0 d-flex justify-content-end align-items-end">    
-                <button type="button" class="btn btn-close-custom  p-0 rounded-circle text-white" data-bs-dismiss="modal" aria-label="Close">
-                X
+            
+            <div class="modal-header border-0 pb-0 d-flex justify-content-end">
+                <button type="button"
+                    class="btn btn-close-custom p-0 rounded-circle text-white position-relative"
+                    style="z-index: 1056; min-width: 30px; min-height: 30px; line-height: 1;"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                    X
                 </button>
-            </div>    
+            </div>
+
 
             <div class="modal-body p-0">
                 <div class="container-fluid px-0">
 
-                    
+
                     <div class="row g-4 mb-4">
 
                         <!-- BLOQUE IZQUIERDO -->
